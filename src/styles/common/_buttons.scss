@@ -1,0 +1,54 @@
+@use 'colors';
+@use 'mixins';
+
+a.btn-primary,
+button {
+    color: colors.$color-white;
+    outline: none;
+    border: 0;
+    padding: 20px;
+    min-width: 180px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+a.btn-primary {
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: colors.$color-primary-btn;
+    @include mixins.transition();
+
+    &:hover {
+        background-color: colors.$color-primary-btn-hover;
+    }
+}
+
+.btn-danger {
+    background-color: colors.$color-danger;
+    @include mixins.transition();
+
+    &:hover {
+        background-color: colors.$color-red-light;
+    }
+}
+
+.btn-close {
+    &:after {
+        content: "+";
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 19px;
+        font-weight: 500;
+        @include mixins.rotate();
+    }
+}

@@ -1,0 +1,29 @@
+.btn {
+   color: #fff;
+   outline: none;
+   border: 0;
+   padding: 20px;
+   min-width: 180px;
+   margin-right: 10px;
+   cursor: pointer;
+   display: inline-block;
+   text-transform: uppercase;
+
+
+
+
+}
+
+.primary {
+   background-color: blueviolet;
+
+}
+
+.secondary {
+   background-color: green;
+
+}
+
+.danger {
+   background-color: red;
+}

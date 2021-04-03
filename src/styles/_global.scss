@@ -1,0 +1,18 @@
+@use 'common/colors';
+@use 'common/mixins';
+@use 'common/fonts';
+
+body {
+   margin: 0;
+   background-color: colors.$color-gray;
+   font-family: fonts.$font-primary;
+}
+
+main {
+   @include mixins.flexbox();
+}
+
+h1 {
+   font-size: 30px;
+   color: colors.$color-gray;
+}
