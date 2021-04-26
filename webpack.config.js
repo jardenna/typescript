@@ -33,10 +33,19 @@ module.exports = {
    output: {
       // output path is required for `clean-webpack-plugin`
       path: path.resolve(__dirname, 'dist'),
-      filename: '[name].[contenthash].js',
+      filename: prodMode ? '[name].[contenthash].js' : '[name].js',
       // this places all images processed in an image folder
       assetModuleFilename: 'images/[hash][ext][query]'
    },
+   devtool: 'source-map',
+
+
+   devServer: {
+      contentBase: './dist',
+      port: 4000,
+      hot: true
+   },
+
    mode,
    module: {
       rules: [
@@ -82,12 +91,5 @@ module.exports = {
 
    plugins,
    target,
-   devtool: 'source-map',
 
-
-   devServer: {
-      contentBase: './dist',
-      port: 4000,
-      hot: true
-   }
 };

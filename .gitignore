@@ -9,9 +9,6 @@ yarn-error.log
 /keys
 
 test.js
-request.rest
-.env
-
 
 # Editor directories and files
 .idea
