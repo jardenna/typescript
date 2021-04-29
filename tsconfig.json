@@ -11,7 +11,20 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
-    "target": "es5"
-  }
+    "target": "es5",
+    "skipLibCheck": true,
+     "esModuleInterop": true,
+   "allowSyntheticDefaultImports": true,
+    "strict": true,
+     "forceConsistentCasingInFileNames": true,
+     "noFallthroughCasesInSwitch": true,
+
+     "resolveJsonModule": true,
+     "isolatedModules": true,
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+]
   
 }
