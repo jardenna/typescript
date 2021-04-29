@@ -3,7 +3,8 @@ function App() {
       <article>
 
          <main>
-            <h1>Hello</h1>
+
+            hello
 
          </main>
       </article>
