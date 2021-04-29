@@ -1,11 +1,9 @@
+import SearchUsers from './refs/SearchUsers';
 function App() {
    return (
       <article>
-
          <main>
-
-            hello
-
+            <SearchUsers />
          </main>
       </article>
 
