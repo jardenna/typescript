@@ -11,7 +11,6 @@ interface IUsers {
    age: number
 }
 
-
 type InputElem = ChangeEvent<HTMLInputElement>;
 type FormElem = FormEvent<HTMLFormElement>;
 
@@ -43,17 +42,16 @@ const SearchUsers: FC = () => {
       setName(e.target.value);
    };
 
-   return (<div>
-      <form onSubmit={searchUser}>
-         <input type="text" value={name} onChange={findUser} ref={inputRef} name="search" />
-         <button type='submit'>Search users</button>
-      </form>
+   return (
+      <div>
+         <form onSubmit={searchUser}>
+            <input type="text" value={name} onChange={findUser} ref={inputRef} name="search" />
+            <button type='submit'>Search users</button>
+         </form>
 
-      <div> Name: {user && user.name}</div>
-      <div> Age:  {user && user.age}</div>
-
-
-   </div>
+         <div> Name: {user && user.name}</div>
+         <div> Age:  {user && user.age}</div>
+      </div>
 
    );
 };

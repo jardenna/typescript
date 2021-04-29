@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const GuestList: React.FC = () => {
-
    const [name, setName] = useState('');
    const [guest, setGuest] = useState<string[]>([]);
 
