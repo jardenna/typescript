@@ -14,7 +14,7 @@ module.exports = {
     },
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/prop-types': ['off'],
     'react/no-direct-mutation-state': 1,
@@ -31,7 +31,8 @@ module.exports = {
     'comma-dangle': 1,
     'no-extra-semi': 1,
     'no-undef': 1,
-    'no-unused-vars': 1,
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
     'no-warning-comments': ['error', { 'terms': ['todo', 'fixme', 'any other term'], 'location': 'anywhere' }],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
