@@ -1,17 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
-import { actionsCreators } from '../state';
+import useActions from '../hooks/useActions';
 
 const ReposList: React.FC = () => {
 
    const [term, setTerm] = React.useState('');
-   const dispatch = useDispatch();
+   const { searchRepos } = useActions();
+
+   // const dispatch = useDispatch();
 
    const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
       e.preventDefault();
       setTerm('');
-      dispatch(actionsCreators.searchRepos(term));
+      searchRepos(term);
+      //Moved to hooks/useActions
+      // dispatch(actionsCreators.searchRepos(term));
    };
 
    const searchPackages = (e: React.ChangeEvent<HTMLInputElement>): void => {
