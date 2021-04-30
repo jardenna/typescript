@@ -16,7 +16,6 @@ export const searchRepos = (term: string) => {
       try {
          const data = await fetch(URL + term);
          const result = await data.json();
-         console.log(result);
 
          if (!result.response) {
             dispatch({
