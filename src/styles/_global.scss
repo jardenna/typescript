@@ -4,12 +4,15 @@
 
 body {
    margin: 0;
-   //background-image: url('../images/frog.jpg');
+
    font-family: fonts.$font-primary;
 }
 
 main {
-   @include mixins.flexbox();
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
 }
 
 h1 {

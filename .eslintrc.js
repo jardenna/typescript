@@ -31,7 +31,7 @@ module.exports = {
     'comma-dangle': 1,
     'no-extra-semi': 1,
     'no-undef': 1,
-    'no-unused-vars': 1,
+    'no-unused-vars': ['off'],
     'no-warning-comments': ['error', { 'terms': ['todo', 'fixme', 'any other term'], 'location': 'anywhere' }],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],

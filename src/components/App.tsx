@@ -1,10 +1,10 @@
-import SearchUsers from './refs/SearchUsers';
+import Todos from './todos';
 
 function App() {
    return (
       <article>
          <main>
-            <SearchUsers />
+            <Todos />
          </main>
       </article>
 
