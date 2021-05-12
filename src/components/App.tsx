@@ -1,10 +1,13 @@
-import Todos from './todos';
+import Card from './Card';
 
 function App() {
    return (
       <article>
          <main>
-            <Todos />
+            <Card
+               title="Hello"
+               variant='big'
+            >My card</Card>
          </main>
       </article>
 

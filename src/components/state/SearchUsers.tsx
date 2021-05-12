@@ -7,10 +7,16 @@ const users = [
    { name: 'Steven', age: 20 }
 ];
 
+interface IUsers {
+   name: string;
+   age: number;
+}
+
+
 const SearchUsers: FC = () => {
 
    const [name, setName] = useState('');
-   const [user, setUser] = useState<{ name: string, age: number } | undefined>();
+   const [user, setUser] = useState<IUsers | undefined>();
 
    const searchUser = () => {
       const foundUser = users.find(a => a.name === name);
