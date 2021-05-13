@@ -1,0 +1,34 @@
+@use 'variables/colors';
+
+
+.btn {
+   color: $color-white;
+   outline: none;
+   border: 0;
+   padding: 20px;
+   min-width: 180px;
+   margin-right: 10px;
+   cursor: pointer;
+   display: inline-block;
+   text-transform: uppercase;
+
+   &:last-child {
+      margin: 0;
+   }
+
+   .primary {
+      background-color: $color-primary;
+   }
+
+   .secondary {
+      background-color: $color-secondary;
+   }
+
+   .success {
+      background-color: $color-success
+   }
+
+   .danger {
+      background-color: $color-danger;
+   }
+}

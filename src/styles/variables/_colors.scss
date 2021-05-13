@@ -11,11 +11,13 @@ $color-blue: #0b6b7c;
 $color-blue-dark: #04515f;
 $color-blue-darkest: #0b373f;
 $color-red: #a71b1b;
-$color-red-light: #d20917; /*colors*/
+$color-red-light: #d20917;
+/*colors*/
 $color-primary: $color-gray;
 $color-secondary: $color-green;
+$color-success: $color-green-dark;
+$color-danger: $color-red;
 $color-primary-text: $color-gray-dark;
 $color-primary-link: $color-green-dark;
 $color-primary-btn: $color-blue-dark;
 $color-primary-btn-hover: $color-blue;
-$color-danger: $color-red;
