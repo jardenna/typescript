@@ -1,13 +1,19 @@
+import { Provider } from 'react-redux';
+
+import { store } from '../state';
+import ReposList from './repos/ReposList';
+
 function App() {
    return (
-      <article>
+      <Provider store={store}>
 
          <main>
 
-            hello
+            <h1>Search for packages</h1>
+            <ReposList />
 
          </main>
-      </article>
+      </Provider>
 
    );
 }
