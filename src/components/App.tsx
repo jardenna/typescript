@@ -2,7 +2,7 @@ function App() {
    return (
       <article>
 
-         <main>
+         <main className="container">
 
             hello
 
