@@ -32,6 +32,8 @@ module.exports = {
     'no-extra-semi': 1,
     'no-undef': 1,
     'no-unused-vars': 'off',
+    '@typescript-eslint/semi': ['error'],
+    'no-unexpected-multiline': 'error',
     '@typescript-eslint/no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
     'no-warning-comments': ['error', { 'terms': ['todo', 'fixme', 'any other term'], 'location': 'anywhere' }],
     quotes: ['error', 'single'],
