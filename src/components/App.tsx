@@ -1,4 +1,5 @@
-import Form from './products/Form';
+import ProductForm from './products/ProductForm';
+import ProductList from './products/ProductList';
 
 function App() {
 
@@ -6,8 +7,9 @@ function App() {
       <article>
 
          <main className="container">
+            <ProductForm />
+            <ProductList />
 
-            <Form />
 
          </main>
       </article>
