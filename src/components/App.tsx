@@ -5,7 +5,6 @@ function App() {
 
    return (
       <article>
-
          <main className="container">
             <ProductForm />
             <ProductList />
