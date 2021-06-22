@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../app/store';
 
+import { AppDispatch } from '../app/store';
+//import fetchApi from './fetchApi';
+
 const url = 'https://jsonplaceholder.typicode.com/todos';
 
 interface ITodo {
@@ -33,7 +36,7 @@ const postSlice = createSlice({
          state.results = [];
       },
       setSuccess(state, action: PayloadAction<[]>) {
-         state.loading = true;
+         state.loading = false;
          state.error = null;
          state.results = action.payload;
       },
@@ -48,7 +51,21 @@ const postSlice = createSlice({
 
 export const { setLoading, setSuccess, setFailure } = postSlice.actions;
 
-export const fetchTodos = async (dispatch: any) => {
+export const fetchTodos = async (dispatch: AppDispatch) => {
+   // const data = await fetchApi('get', url);
+
+
+
+   // dispatch(setLoading());
+   // if (data) {
+   //    dispatch(setSuccess(data));
+   // } else {
+   //    dispatch(setFailure('hh'));
+
+   // }
+
+
+   dispatch(setLoading());
    try {
       const res = await fetch(url);
       const result = await res.json();
