@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../app/store';
-
 import { AppDispatch } from '../app/store';
 //import fetchApi from './fetchApi';
 
