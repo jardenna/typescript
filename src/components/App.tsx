@@ -1,14 +1,10 @@
-
-import Counter from './Counter';
-import Todo from './Todo';
+import Todos from './Todos';
 function App() {
 
    return (
       <article>
          <main className="container">
-            <Todo />
-            <Counter />
-
+            <Todos />
          </main>
       </article>
 
