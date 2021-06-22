@@ -1,12 +1,13 @@
 
-
+import Counter from './Counter';
+import Todo from './Todo';
 function App() {
 
    return (
       <article>
          <main className="container">
-
-            Hej
+            <Todo />
+            <Counter />
 
          </main>
       </article>
