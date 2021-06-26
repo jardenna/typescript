@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import produce, { Draft } from 'immer';
-
 
 interface Todo {
    id: string;
