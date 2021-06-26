@@ -1,13 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-
-import postReducer from '../features/postSlice';
+import todosReducer from '../features/todos/todoSlice';
 
 
 const store = configureStore({
    reducer: {
+      todos: todosReducer
 
-      posts: postReducer
    }
 });
 

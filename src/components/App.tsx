@@ -1,10 +1,10 @@
-import Todos from './Todos';
+import AddTodos from '../features/todos/AddTodos';
 function App() {
 
    return (
       <article>
          <main className="container">
-            <Todos />
+            <AddTodos />
          </main>
       </article>
 
