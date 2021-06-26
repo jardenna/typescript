@@ -10,13 +10,13 @@ interface Todo {
 interface TodosState {
    list: Todo[];
    status: 'idle' | 'pending' | 'succeeded' | 'failed';
-   error: string | null
+   error: boolean
 }
 
 export const getTodosAsync = createAsyncThunk(
    'todos(getTodosAsync',
    async () => {
-      const responce = await fetch('https://jsonplceholder.typicode.com/todos');
+      const responce = await fetch('https://jsonplaceholder.typicode.com/todos');
       if (responce.ok) {
          const todos = await responce.json();
          return todos;
@@ -26,11 +26,10 @@ export const getTodosAsync = createAsyncThunk(
    }
 );
 
-
 const initialState: TodosState = {
    status: 'idle',
    list: [],
-   error: null
+   error: false
 };
 
 export const todosSlice = createSlice({
@@ -62,18 +61,20 @@ export const todosSlice = createSlice({
 
       builder.addCase(getTodosAsync.pending, (state) => {
          state.status = 'pending';
-         state.error = null;
+         state.error = false;
 
       });
       builder.addCase(getTodosAsync.fulfilled, (state, { payload }) => {
 
+
          if (payload === '') {
-            state.error = 'Error';
+            state.error = true;
             state.status = 'failed';
+            state.list = [];
          } else {
             state.list.push(...payload);
             state.status = 'succeeded';
-            state.error = null;
+            state.error = false;
          }
 
 
@@ -82,8 +83,8 @@ export const todosSlice = createSlice({
       builder.addCase(getTodosAsync.rejected, (state) => {
 
 
-         state.error = 'Error';
-         state.status = 'idle';
+         state.error = true;
+         state.status = 'failed';
          state.list = [];
 
       });
