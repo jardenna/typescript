@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
 interface Todo {
@@ -9,15 +9,28 @@ interface Todo {
 
 interface TodosState {
    list: Todo[];
+   status: 'idle' | 'pending' | 'succeeded' | 'failed';
+   error: string | null
 }
 
-const initialState: TodosState = {
-   list: [
-      { title: 'Escape from Tarkow', completed: false, id: 'est' },
-      { title: 'Hunt: Showdown', completed: false, id: 'hunt' },
-      { title: 'Hell lets loose', completed: false, id: 'hll' }
+export const getTodosAsync = createAsyncThunk(
+   'todos(getTodosAsync',
+   async () => {
+      const responce = await fetch('https://jsonplceholder.typicode.com/todos');
+      if (responce.ok) {
+         const todos = await responce.json();
+         return todos;
+      } else {
+         return '';
+      }
+   }
+);
 
-   ]
+
+const initialState: TodosState = {
+   status: 'idle',
+   list: [],
+   error: null
 };
 
 export const todosSlice = createSlice({
@@ -42,10 +55,40 @@ export const todosSlice = createSlice({
          state.list[index].completed = !state.list[index].completed;
       },
       deleteTodos: (state, action: PayloadAction<string>) => {
-         //return produce(state, (draft: Draft<RootState>)
          state.list = state.list.filter((todo) => todo.id !== action.payload);
       }
+   },
+   extraReducers: (builder) => {
+
+      builder.addCase(getTodosAsync.pending, (state) => {
+         state.status = 'pending';
+         state.error = null;
+
+      });
+      builder.addCase(getTodosAsync.fulfilled, (state, { payload }) => {
+
+         if (payload === '') {
+            state.error = 'Error';
+            state.status = 'failed';
+         } else {
+            state.list.push(...payload);
+            state.status = 'succeeded';
+            state.error = null;
+         }
+
+
+      });
+
+      builder.addCase(getTodosAsync.rejected, (state) => {
+
+
+         state.error = 'Error';
+         state.status = 'idle';
+         state.list = [];
+
+      });
    }
+
 });
 
 

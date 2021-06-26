@@ -1,17 +1,22 @@
+import { useEffect } from 'react';
+
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { selectTodos, toggleTodo, deleteTodos } from './todoSlice';
+import { selectTodos, toggleTodo, deleteTodos, getTodosAsync } from './todoSlice';
 
 const TodoList = () => {
    const dispatch = useAppDispatch();
-
    const todos = useAppSelector(selectTodos);
+
+   useEffect(() => {
+      dispatch(getTodosAsync());
+   }, []);
 
    return (
       <ul>
          {todos && todos.map((todo) => (
             <li key={todo.id}>
                <label>
-                  {todo.title}
+                  <h2> {todo.title}</h2>
 
                   <input
                      type="checkbox"
