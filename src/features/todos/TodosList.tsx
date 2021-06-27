@@ -11,6 +11,10 @@ const TodoList = () => {
       dispatch(getTodosAsync());
    }, []);
 
+   const toggleTodos = (id: string) => {
+      dispatch(toggleTodo(id));
+   };
+
    return (
       <ul>
          {todos && todos.map((todo) => (
@@ -21,7 +25,7 @@ const TodoList = () => {
                   <input
                      type="checkbox"
                      checked={todo.completed}
-                     onChange={() => dispatch(toggleTodo(todo.id))}
+                     onChange={() => toggleTodos(todo.id)}
                   />
                </label>
                <button onClick={() => dispatch(deleteTodos(todo.id))}>Delete</button>

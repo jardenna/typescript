@@ -43,7 +43,7 @@ export const todosSlice = createSlice({
             completed: false,
             title: action.payload
          };
-         state.list = [...state.list, newTodo];
+         state.list = [newTodo, ...state.list];
       },
 
       toggleTodo: (state, action: PayloadAction<string>) => {
