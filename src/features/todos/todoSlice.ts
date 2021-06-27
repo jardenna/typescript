@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+
 import { RootState } from '../../app/store';
 
 interface Todo {
@@ -42,7 +43,6 @@ export const todosSlice = createSlice({
             completed: false,
             title: action.payload
          };
-
          state.list = [...state.list, newTodo];
       },
 
@@ -58,15 +58,12 @@ export const todosSlice = createSlice({
       }
    },
    extraReducers: (builder) => {
-
       builder.addCase(getTodosAsync.pending, (state) => {
          state.status = 'pending';
          state.error = false;
 
       });
       builder.addCase(getTodosAsync.fulfilled, (state, { payload }) => {
-
-
          if (payload === '') {
             state.error = true;
             state.status = 'failed';
@@ -76,24 +73,16 @@ export const todosSlice = createSlice({
             state.status = 'succeeded';
             state.error = false;
          }
-
-
       });
 
       builder.addCase(getTodosAsync.rejected, (state) => {
-
-
          state.error = true;
          state.status = 'failed';
          state.list = [];
-
       });
    }
 
 });
-
-
-
 
 export const { addTodo, toggleTodo, deleteTodos } = todosSlice.actions;
 export const selectTodos = (state: RootState) => state.todos.list;

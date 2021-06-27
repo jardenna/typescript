@@ -3,7 +3,6 @@ import { FC, FormEvent, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { addTodo } from './todoSlice';
 
-
 import TodoList from './TodosList';
 import TodosCompleted from './TodosCompleted';
 
@@ -22,7 +21,6 @@ const AddTodos: FC = () => {
 
    return (
       <div>
-
          <form onSubmit={handleSubmit}>
             <input
                type="text"
