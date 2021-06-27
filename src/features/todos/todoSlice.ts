@@ -16,11 +16,12 @@ interface TodosState {
 
 export const getTodosAsync = createAsyncThunk(
    'todos(getTodosAsync',
-   async () => {
+   async (num: number = 4) => {
       const responce = await fetch('https://jsonplaceholder.typicode.com/todos');
       if (responce.ok) {
          const todos = await responce.json();
-         return todos;
+
+         return todos.slice(0, num);
       } else {
          return '';
       }
@@ -64,6 +65,7 @@ export const todosSlice = createSlice({
 
       });
       builder.addCase(getTodosAsync.fulfilled, (state, { payload }) => {
+
          if (payload === '') {
             state.error = true;
             state.status = 'failed';

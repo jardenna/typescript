@@ -1,11 +1,13 @@
-@use 'variables/colors';
-@use 'variables/mixins';
 @use 'variables/fonts';
+
+* {
+   box-sizing: border-box;
+}
 
 body {
    margin: 0;
-   //background-image: url('../images/frog.jpg');
    font-family: fonts.$font-primary;
+   background-color: $color-blue;
 }
 
 .container {
@@ -14,32 +16,9 @@ body {
    padding: 30px;
 }
 
+
+
 h1 {
    font-size: 30px;
 
-}
-
-.card {
-   border: 1px solid #ddd;
-   padding: 10px;
-}
-
-.tag {
-   padding: 10px;
-   border-radius: 5px;
-   font-size: 13px;
-   font-weight: 600;
-   padding: 10px;
-   max-width: 100px;
-   text-align: center;
-
-   &.green {
-      background-color: $color-blue-dark;
-      color: $color-white;
-   }
-
-   &.red {
-      background-color: $color-red-light;
-      color: $color-white;
-   }
 }

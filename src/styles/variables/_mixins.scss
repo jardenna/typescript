@@ -4,7 +4,7 @@
     }
 }
 
-@mixin arrow($size: 20px, $color:green) {
+@mixin arrow($size: 20px, $color:$color-gray) {
     width: 0;
     height: 0;
     border: solid transparent;
@@ -18,7 +18,7 @@
     border-radius: $size / 2;
 }
 
-@mixin triangle($size:20px, $color:red, $dir:up) {
+@mixin triangle($size:20px, $color:$color-gray, $dir:up) {
     position: absolute;
     width: 0;
     height: 0;
@@ -42,7 +42,7 @@
     }
 }
 
-@mixin chevron($size: 10px, $weight:2px, $color:$color-gray-darker, $dir:up) {
+@mixin chevron($size: 10px, $weight:2px, $color:$color-gray, $dir:up) {
     width: $size;
     height: $size;
     border: $weight solid $color;

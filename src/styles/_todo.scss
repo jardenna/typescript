@@ -1,0 +1,71 @@
+.todo-container {
+   max-width: 800px;
+   margin: 0 auto;
+
+   .submit-btn {
+      position: absolute;
+      right: 17px;
+      top: 29px;
+   }
+
+   .todo {
+      list-style: none;
+      padding: 0;
+   }
+
+   .todo-item {
+      background-color: $color-white;
+      margin: 20px 0;
+      padding: 20px 10px;
+      position: relative;
+   }
+
+   .todo-actions {
+      position: absolute;
+      width: 60px;
+      height: 100%;
+      top: 0;
+   }
+
+   .todo-input {
+      background-color: $color-blue-light;
+      right: 60px;
+
+      input {
+         top: 13px;
+         position: absolute;
+         left: 15px;
+         width: 20px;
+         height: 20px;
+      }
+   }
+
+   .todo-btn {
+      background-color: $color-purple;
+      right: 0;
+
+      .icon {
+         top: 20px;
+         position: absolute;
+         left: 20px;
+      }
+   }
+
+
+
+   .gg-math-plus {
+      color: $color-black;
+   }
+
+   .gg-trash-empty {
+      color: $color-white;
+   }
+
+
+   .icon {
+      border: none;
+      background: none;
+      cursor: pointer;
+   }
+
+}

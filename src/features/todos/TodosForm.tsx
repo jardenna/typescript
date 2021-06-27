@@ -20,7 +20,7 @@ const AddTodos: FC = () => {
    };
 
    return (
-      <div>
+      <div className="todo-container">
          <form onSubmit={handleSubmit}>
             <input
                type="text"
@@ -28,7 +28,9 @@ const AddTodos: FC = () => {
                value={title}
                onChange={(e) => setTitle(e.target.value)}
             />
-            <button>Add Todo</button>
+            <button type='submit' className="icon submit-btn"> <i className="gg-math-plus" /></button>
+
+
          </form>
          <TodoList />
          <hr />

@@ -1,21 +1,15 @@
 $color-white: #ffffff;
 $color-black: #000000;
-$color-green: #7fd0c9;
-$color-green-dark: #26989B;
 $color-gray: #e1e1e1;
-$color-gray-light: #f4f7f6;
-$color-gray-lighter: #f5f5f3;
-$color-gray-darker: #363636;
-$color-gray-dark: #333300;
-$color-blue: #0b6b7c;
-$color-blue-dark: #04515f;
-$color-blue-darkest: #0b373f;
-$color-red: #a71b1b;
-$color-red-light: #d20917; /*colors*/
+$color-purple: #4a156e;
+$color-purple-light: #b4b0d1;
+$color-blue: #464997;
+$color-blue-light: #5678c4;
+
+$color-red: #d20917;
+
+/*colors*/
 $color-primary: $color-gray;
-$color-secondary: $color-green;
-$color-primary-text: $color-gray-dark;
-$color-primary-link: $color-green-dark;
-$color-primary-btn: $color-blue-dark;
-$color-primary-btn-hover: $color-blue;
+$color-secondary: $color-purple;
+
 $color-danger: $color-red;

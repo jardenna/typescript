@@ -8,7 +8,11 @@ const TodoList = () => {
    const todos = useAppSelector(selectTodos);
 
    useEffect(() => {
-      dispatch(getTodosAsync());
+      //Need to only run getTodosAsync if it not allready fetched
+      //Param = number of items
+      if (todos.length === 0) {
+         dispatch(getTodosAsync(5));
+      }
    }, []);
 
    const toggleTodos = (id: string) => {
@@ -16,19 +20,25 @@ const TodoList = () => {
    };
 
    return (
-      <ul>
+      <ul className="todo">
          {todos && todos.map((todo) => (
-            <li key={todo.id}>
+            <li key={todo.id} className="todo-item">
                <label>
-                  <h2> {todo.title}</h2>
+                  {todo.title}
+                  <div className="todo-input todo-actions">
+                     <input
+                        type="checkbox"
+                        checked={todo.completed}
+                        onChange={() => toggleTodos(todo.id)}
+                     />
+                  </div>
 
-                  <input
-                     type="checkbox"
-                     checked={todo.completed}
-                     onChange={() => toggleTodos(todo.id)}
-                  />
+
                </label>
-               <button onClick={() => dispatch(deleteTodos(todo.id))}>Delete</button>
+               <div className="todo-btn todo-actions">
+                  <button className="icon" onClick={() => dispatch(deleteTodos(todo.id))}> <i className="gg-trash-empty" /></button>
+               </div>
+
             </li>
          ))}
       </ul>
