@@ -1,7 +1,7 @@
 import { FormEvent, ChangeEvent, useState } from 'react';
 
-import { addProduct, IProducts } from '../../state/productsSlice';
-import { useAppDispatch } from '../../state/storeHooks';
+import { addProduct, IProducts } from '../../app/productsSlice';
+import { useAppDispatch } from '../../app/hooks';
 const ProductForm = () => {
 
    const dispatch = useAppDispatch();
@@ -22,10 +22,10 @@ const ProductForm = () => {
    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      //dispatch(addProduct(product));
+      dispatch(addProduct(product));
    };
 
-   console.log(product);
+
    return (
       <div className="Form">
 
@@ -47,7 +47,7 @@ const ProductForm = () => {
                <input
                   id="price"
                   name="price"
-                  value={product.price}
+                  value={Number(product.price)}
                   onChange={onChange}
                   placeholder="Price"
                   type="number"

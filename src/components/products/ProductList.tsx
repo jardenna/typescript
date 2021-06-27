@@ -1,15 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../app/hooks';
 
-import { getProductSelector } from '../../state/productsSlice';
+import { getProductSelector } from '../../app/productsSlice';
 
 const ProductList: React.FC = () => {
-   const products = useSelector(getProductSelector);
+   const products = useAppSelector(getProductSelector);
 
    return (
       <section>
          <h2>Game</h2>
-
          <ul>
             {products.map(products =>
                <li key={products.id}>
