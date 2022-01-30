@@ -1,6 +1,4 @@
-
-
- {
+{
   "compilerOptions": {
     "jsx": "react-jsx",
     "allowJs": true,
@@ -13,19 +11,15 @@
     "sourceMap": true,
     "target": "es5",
     "skipLibCheck": true,
-     "esModuleInterop": true,
-   "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-     "forceConsistentCasingInFileNames": true,
-     "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
 
-     "resolveJsonModule": true,
-     "isolatedModules": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "test.ts",
-]
-  
+  "exclude": ["node_modules", "dist", "test.ts"]
+
 }
